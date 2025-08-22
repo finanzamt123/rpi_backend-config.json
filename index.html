@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Hydroponics Dashboard</title>
+</head>
+<body>
+  <h1>Hydroponics Dashboard</h1>
+  <form onsubmit="sendSettings();return false;">
+    Ziel EC (ppm): <input id="target_ec" type="number" value="500"><br>
+    Wartezeit (Minuten): <input id="wait_min" type="number" value="30"><br>
+    <button type="submit">Speichern</button>
+  </form>
+  <p><a href="/download_data">📥 CSV Download</a></p>
+  <p><img src="/graph24h" width="600"></p>
+
+  <script>
+  function sendSettings(){
+    fetch('/api/settings',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        target_ec:document.getElementById('target_ec').value,
+        wait_min:document.getElementById('wait_min').value
+      })})
+    .then(r=>r.json()).then(a=>alert('Gespeichert: '+JSON.stringify(a)));
+  }
+  </script>
+</body>
+</html>
