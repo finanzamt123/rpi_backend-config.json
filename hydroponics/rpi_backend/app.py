@@ -4,8 +4,7 @@ timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 water_temp_1 REAL, water_temp_2 REAL,
 air_temp_1 REAL, air_temp_2 REAL,
 tds_ppm REAL
-)
-""")
+
 conn.execute("""
 CREATE TABLE IF NOT EXISTS tenmin_log(
 id INTEGER PRIMARY KEY,
