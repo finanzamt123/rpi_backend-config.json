@@ -1,0 +1,15 @@
+{
+"target_ec_ppm": 500,
+"wait_min_schedule": {
+"00:0rpi_backend/config.json
+0-06:59": 60,
+"07:00-21:59": 20,
+"22:00-23:59": 40
+},
+"pi_kp": 0.02,
+"pi_ki": 0.001,
+"pump_max_s": 10,
+"token": "",
+"listen": "0.0.0.0",
+"port": 5000
+}
